@@ -28,6 +28,7 @@ import org.twodividedbyzero.idea.findbugs.gui.toolwindow.view.ToolWindowPanel;
 
 import javax.swing.JTree;
 
+// 对bug树的展开和闭合动作进行抽象
 abstract class AbstractExpandOrCollapseAction extends AbstractAction {
 
 	@Override
@@ -37,6 +38,7 @@ abstract class AbstractExpandOrCollapseAction extends AbstractAction {
 			@NotNull final ToolWindow toolWindow,
 			@NotNull final FindBugsState state
 	) {
+
 
 		final ToolWindowPanel panel = ToolWindowPanel.getInstance(toolWindow);
 		if (panel == null) {

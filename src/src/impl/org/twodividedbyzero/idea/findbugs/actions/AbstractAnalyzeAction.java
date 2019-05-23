@@ -44,6 +44,7 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import java.util.Map;
 
+// 抽象分析操作
 abstract class AbstractAnalyzeAction extends AbstractAction {
 
 	@Override
@@ -54,6 +55,7 @@ abstract class AbstractAnalyzeAction extends AbstractAction {
 			@NotNull final FindBugsState state
 	) {
 
+		// 仅仅是增加了这个checkEDT help
 		EventDispatchThreadHelper.checkEDT();
 
 // TODO

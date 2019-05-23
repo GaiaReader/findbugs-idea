@@ -136,6 +136,7 @@ public final class FindBugsProjects {
 				}
 			});
 
+			// source root可以有多个的
 			final VirtualFile[] sourceRoots = getSourceRoots(module, includeTests);
 			for (final VirtualFile sourceRoot : sourceRoots) {
 				if (!ret.addSourceDir(sourceRoot.getCanonicalPath())) {

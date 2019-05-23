@@ -31,6 +31,7 @@ import org.twodividedbyzero.idea.findbugs.core.FindBugsState;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
+// 消息总线管理器
 public final class MessageBusManager {
 
 	private static final Map<Project, MessageBus> _busByProject = New.map();

@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.twodividedbyzero.idea.findbugs.core.FindBugsState;
 import org.twodividedbyzero.idea.findbugs.messages.MessageBusManager;
 
+// 清除并关闭ToolWindow
 public final class ClearAndCloseToolWindow extends AbstractAction {
 
 	@Override

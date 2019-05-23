@@ -32,6 +32,7 @@ import org.twodividedbyzero.idea.findbugs.core.ModuleSettings;
 import org.twodividedbyzero.idea.findbugs.core.ProjectSettings;
 import org.twodividedbyzero.idea.findbugs.gui.toolwindow.view.ToolWindowPanel;
 
+// 针对触发式的action进行拓展
 abstract class AbstractToggleAction extends ToggleAction {
 
 	@Override

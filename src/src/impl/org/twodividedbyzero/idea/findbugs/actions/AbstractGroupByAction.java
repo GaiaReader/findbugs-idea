@@ -33,6 +33,7 @@ import org.twodividedbyzero.idea.findbugs.gui.tree.GroupBy;
 
 import java.util.Arrays;
 
+// 对结果树以什么进行分类的动作进行抽象
 abstract class AbstractGroupByAction extends AbstractToggleAction {
 
 	private final GroupBy _groupBy;
@@ -53,6 +54,7 @@ abstract class AbstractGroupByAction extends AbstractToggleAction {
 			@NotNull final AbstractSettings settings
 	) {
 
+		// 工作空间获取 help
 		final WorkspaceSettings workspaceSettings = WorkspaceSettings.getInstance(project);
 		final String groupByProperty = workspaceSettings.toolWindowGroupBy;
 		final boolean equals = _groupBy.name().equals(groupByProperty);

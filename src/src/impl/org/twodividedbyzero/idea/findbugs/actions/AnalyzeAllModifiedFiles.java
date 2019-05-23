@@ -34,7 +34,7 @@ import org.twodividedbyzero.idea.findbugs.core.FindBugsStarter;
 import org.twodividedbyzero.idea.findbugs.core.FindBugsState;
 
 import java.util.List;
-
+// 分析所有修改过的文件
 public final class AnalyzeAllModifiedFiles extends AbstractAnalyzeAction {
 
 	@Override
@@ -71,6 +71,7 @@ public final class AnalyzeAllModifiedFiles extends AbstractAnalyzeAction {
 
 		final List<VirtualFile> modifiedFiles = IdeaUtilImpl.getAllModifiedFiles(e.getDataContext());
 
+		// FindBugsStarter help
 		new FindBugsStarter(project, "Running FindBugs analysis for modified files...") {
 			@Override
 			protected void createCompileScope(@NotNull final CompilerManager compilerManager, @NotNull final Consumer<CompileScope> consumer) {

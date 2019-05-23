@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2016 Andre Pfeiler
+ * Copyright 2008-2019 Andre Pfeiler
  *
  * This file is part of FindBugs-IDEA.
  *
@@ -27,6 +27,8 @@ import org.twodividedbyzero.idea.findbugs.common.util.IdeaUtilImpl;
 import org.twodividedbyzero.idea.findbugs.core.FindBugsState;
 import org.twodividedbyzero.idea.findbugs.gui.toolwindow.view.ToolWindowPanel;
 
+
+// 对AnAction进行拓展，主要是将actionPerformed 和 update方法进行拓展，进行一些共用的处理，如判断项目是否已经加载完成，未加载完成则不显示按钮
 abstract class AbstractAction extends AnAction {
 
 	@Override

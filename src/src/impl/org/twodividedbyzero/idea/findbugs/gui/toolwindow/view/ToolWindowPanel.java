@@ -411,6 +411,7 @@ public final class ToolWindowPanel extends JPanel implements AnalysisStateListen
 		return getInstance(getWindow(project));
 	}
 
+	// ToolWindowPanel提供从toolwindow中获取实例的方法很棒
 	@Nullable
 	public static ToolWindowPanel getInstance(@Nullable final ToolWindow toolWindow) {
 		if (toolWindow == null) {

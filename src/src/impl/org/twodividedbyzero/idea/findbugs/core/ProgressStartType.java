@@ -18,6 +18,7 @@
  */
 package org.twodividedbyzero.idea.findbugs.core;
 
+// 枚举类型，表达运行的类型，后台运行等
 enum ProgressStartType {
 	RunInBackgroundFromSettings,
 	RunInBackground,

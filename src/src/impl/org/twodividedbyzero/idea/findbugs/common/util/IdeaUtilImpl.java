@@ -197,6 +197,7 @@ public final class IdeaUtilImpl {
 	}
 
 
+	// 简单获取修改过的文件
 	@NotNull
 	public static List<VirtualFile> getAllModifiedFiles(@NotNull final DataContext dataContext) {
 		final Project project = getProject(dataContext);

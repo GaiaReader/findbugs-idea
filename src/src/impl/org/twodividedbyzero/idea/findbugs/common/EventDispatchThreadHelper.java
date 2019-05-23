@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.EventQueue;
 import java.lang.reflect.InvocationTargetException;
 
+// 事件分发线程帮助类，
 public final class EventDispatchThreadHelper {
 
 	private static final Logger LOGGER = Logger.getInstance(EventDispatchThreadHelper.class.getName());

@@ -70,6 +70,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+// 实现后台运行等相关功能的类
 public abstract class FindBugsStarter implements AnalysisAbortingListener {
 
 	private static final Logger LOGGER = Logger.getInstance(FindBugsStarter.class);
@@ -88,7 +89,7 @@ public abstract class FindBugsStarter implements AnalysisAbortingListener {
 
 	private final boolean startProgressInBackground;
 
-	private final boolean startProgressModal;
+	private final boolean startProgressModal; // 这个是什么用的 help
 
 	private final AtomicBoolean _cancellingByUser;
 
@@ -126,6 +127,7 @@ public abstract class FindBugsStarter implements AnalysisAbortingListener {
 			default:
 				throw new UnsupportedOperationException("Unsupported " + progressStartType);
 		}
+		// AtomicBoolean 属于自带的原子包，可以在多线程环境下的原子操作
 		_cancellingByUser = new AtomicBoolean();
 		MessageBusManager.subscribe(project, this, AnalysisAbortingListener.TOPIC, this);
 	}
@@ -136,6 +138,7 @@ public abstract class FindBugsStarter implements AnalysisAbortingListener {
 
 	public final void start() {
 		EventDispatchThreadHelper.checkEDT();
+		// 分析前先编译
 		if (isCompileBeforeAnalyze()) {
 			final boolean isAnalyzeAfterCompile = workspaceSettings.analyzeAfterCompile;
 			final CompilerManager compilerManager = CompilerManager.getInstance(project);
@@ -178,7 +181,7 @@ public abstract class FindBugsStarter implements AnalysisAbortingListener {
 		}
 		/**
 		 * Important: Make sure the tool window is initialized.
-		 * This call is to important to make it just in case of false = toolWindowToFront
+		 * This call is too important to make it just in case of false = toolWindowToFront
 		 * because we have no guarantee that activateToolWindow works.
 		 */
 		((ToolWindowImpl) toolWindow).ensureContentInitialized();
@@ -186,6 +189,7 @@ public abstract class FindBugsStarter implements AnalysisAbortingListener {
 			ToolWindowPanel.showWindow(toolWindow);
 		}
 
+		// 这里调用了异步启动
 		final Task task;
 		if (startProgressModal) {
 			task = new Task.Modal(project, _title, true) {
