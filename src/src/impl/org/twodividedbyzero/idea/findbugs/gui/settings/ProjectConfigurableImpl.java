@@ -77,6 +77,7 @@ public final class ProjectConfigurableImpl extends AbstractConfigurableImpl<Proj
 	}
 
 	public static void show(@NotNull final Project project) {
+		// 真方便，简单弹出设置页面
 		ShowSettingsUtil.getInstance().showSettingsDialog(project, ProjectConfigurableImpl.DISPLAY_NAME);
 	}
 

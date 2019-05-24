@@ -46,6 +46,7 @@ public final class ShowPreferencesPage extends AbstractAction {
 			@NotNull final ToolWindow toolWindow,
 			@NotNull final FindBugsState state
 	) {
+		// 这种调用方式是有什么设计原则么？ help
 		ProjectConfigurableImpl.show(project);
 	}
 }

@@ -217,6 +217,7 @@ public final class FindBugsProjects {
 		return ModuleRootManager.getInstance(module).getSourceRoots(includeTests);
 	}
 
+	// 有点意思，显示提示框
 	private void showWarning(@NotNull final String message) {
 		EventDispatchThreadHelper.invokeLater(new Runnable() {
 			@Override

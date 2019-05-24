@@ -68,6 +68,7 @@ public final class AnalyzeSelectedFiles extends AbstractAnalyzeAction {
 
 		final VirtualFile[] selectedFiles = IdeaUtilImpl.getVirtualFiles(e.getDataContext());
 
+		// 后台运行
 		new FindBugsStarter(project, "Running FindBugs analysis for selected files...") {
 			@Override
 			protected void createCompileScope(@NotNull final CompilerManager compilerManager, @NotNull final Consumer<CompileScope> consumer) {
